@@ -9,6 +9,7 @@ require 'unifi/post_to_controller'
 require 'unifi/login'
 require 'unifi/authorize_guest'
 require 'unifi/unauthorize_guest'
+require 'unifi/get_stat'
 
 module Unifi
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
