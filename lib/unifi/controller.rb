@@ -10,7 +10,7 @@ module Unifi
         ssl: { verify: false }
       ) do |faraday|
         faraday.use      :cookie_jar
-        faraday.response :logger
+        #faraday.response :logger
         faraday.adapter  Faraday.default_adapter
       end
     end
