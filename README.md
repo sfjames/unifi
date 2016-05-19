@@ -33,8 +33,11 @@ Other options for the controller are:
 Currently, the gem supports the following methods, which are named for and map directly to Unifi Controller API commands:
 
 ### login
+Required arguments:
+- `username`: The unifi controller user to authenticate as
+- `password`: The password for the above user
 
-Call this first, and be sure that the following, self-explanator ENV variables are set: UNIFI_USER, UNIFI_PASSWORD. If you don't `login` first, none of your other commands will be authorized.
+Call this first. If you don't `login` first, none of your other commands will be authorized.
 
 ### logout
 
