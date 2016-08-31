@@ -2,13 +2,16 @@ module Unifi
   class Login < PostToController
     include Troupe
 
-    provides(:url) { "/api/login" }
+    expects :username
+    expects :password
+
+    provides(:url) { '/api/login' }
 
     provides :json do
       {
         login: 'login',
-        username: ENV['UNIFI_USER'],
-        password: ENV['UNIFI_PASSWORD']
+        username: username,
+        password: password
       }.to_json
     end
   end

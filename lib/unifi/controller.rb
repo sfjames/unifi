@@ -16,8 +16,8 @@ module Unifi
       end
     end
 
-    def login
-      interactor = Unifi::Login.call(conn: conn)
+    def login(opts)
+      interactor = Unifi::Login.call(opts.merge(conn: conn))
       interactor.response
     end
 
@@ -25,6 +25,11 @@ module Unifi
       conn.post do |req|
         req.url '/api/logout'
       end
+    end
+
+    def stats(opts)
+      interactor = Unifi::GetStat.call(opts.merge(site: site, conn: conn))
+      interactor.response
     end
 
     def authorize_guest(opts)
