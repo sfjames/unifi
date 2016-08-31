@@ -2,12 +2,12 @@ module Unifi
   class Controller
     attr_reader :site, :uri
 
-    def initialize(host:, port: 8443, site: 'default')
+    def initialize(host:, port: 8443, site: 'default', verify_peer: true)
       @uri = Addressable::URI.new(host: host, port: port, scheme: 'https')
       @site = site
       @conn = Faraday.new(
         url: uri.to_s,
-        ssl: { verify: false }
+        ssl: { verify: verify_peer }
       ) do |faraday|
         faraday.use      :cookie_jar
         # faraday.response :logger

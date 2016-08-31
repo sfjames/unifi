@@ -16,5 +16,4 @@ require 'unifi/list_clients'
 require 'unifi/get_stat'
 
 module Unifi
-  #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 end
