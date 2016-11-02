@@ -14,6 +14,7 @@ require 'unifi/authorize_guest'
 require 'unifi/unauthorize_guest'
 require 'unifi/list_clients'
 require 'unifi/get_stat'
+require 'unifi/delete_voucher'
 
 module Unifi
 end
