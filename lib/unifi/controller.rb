@@ -47,6 +47,11 @@ module Unifi
       interactor.response.body["data"]
     end
 
+    def delete_voucher(_id)
+      interactor = Unifi::DeleteVoucher.call(site: site, conn: conn, _id: _id)
+      interactor.response
+    end
+
     private
     attr_accessor :conn
   end
