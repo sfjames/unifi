@@ -1,6 +1,7 @@
 module Unifi
   class Controller
-    attr_reader :site, :uri
+    attr_reader :uri
+    attr_accessor :site
 
     def initialize(host:, port: 8443, site: 'default', verify_peer: true)
       @uri = Addressable::URI.new(host: host, port: port, scheme: 'https')
